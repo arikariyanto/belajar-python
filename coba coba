@@ -1,0 +1,24 @@
+
+from datetime import datetime, date
+
+def hitung_umur(tanggal_lahir):
+    today = date.today()
+    umur = today.year - tanggal_lahir.year
+
+    if (today.month, today.day) < (tanggal_lahir.month, tanggal_lahir.day):
+        umur -= 1
+    return umur
+
+def main():
+    print("=== Program Hitung Umur ===")
+    tgl_input = input("Masukkan tanggal lahir (format: YYYY-MM-DD): ")
+
+    try:
+        tanggal_lahir = datetime.strptime(tgl_input, "%Y-%m-%d").date()
+        umur = hitung_umur(tanggal_lahir)
+        print(f"\nUmur Anda hari ini ({date.today()}) adalah {umur} tahun.")
+    except ValueError:
+        print("Format tanggal salah! Gunakan format YYYY-MM-DD (contoh: 2000-05-15)")
+
+if __name__ == "__main__":
+    main()
