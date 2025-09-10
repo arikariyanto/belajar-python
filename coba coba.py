@@ -31,7 +31,6 @@ def main():
         tanggal_lahir = datetime.strptime(tgl_input, "%Y-%m-%d").date()
         tahun, bulan, hari = hitung_umur_detail(tanggal_lahir)
 
-        # tambahan: hitung total hari hidup
         today = date.today()
         total_hari = (today - tanggal_lahir).days
 
