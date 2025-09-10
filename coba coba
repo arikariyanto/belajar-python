@@ -1,3 +1,0 @@
-nama = input ("masukan nama Anda : ")
-umur = input ("masukan umur Anda : ")
-print("Halo", nama, "umur kamu", umur, "tahun")
