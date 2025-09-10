@@ -6,4 +6,4 @@ if umur < 12:
 elif umur < 21:
     print ("kamu masih remaja")
 else :
-    print("kamu sudah remaja")
+    print("kamu sudah dewasa")
