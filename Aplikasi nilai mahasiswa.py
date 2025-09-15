@@ -4,6 +4,18 @@ print("="*40)
 
 mahasiswa = []
 
+def tambah_mahasiswa():
+    nama = input("Masukkan nama mahasiswa: ")
+    nilai = int(input("Masukkan nilai mahasiswa: "))
+    mahasiswa.append([nama, nilai])
+    print(f"✅ Data {nama} berhasil ditambahkan!")
+
+def hitung_rata():
+    total = 0
+    for mhs in mahasiswa:
+        total += mhs[1]
+    return total / len(mahasiswa)
+
 while True:
     print("\n" + "="*40)
     print("MENU".center(40))
@@ -22,9 +34,7 @@ while True:
         break
 
     elif pilihan == 1:
-        nama = input("Masukkan nama mahasiswa: ")
-        nilai = int(input("Masukkan nilai mahasiswa: "))
-        mahasiswa.append([nama, nilai])
+            tambah_mahasiswa()
 
     elif pilihan == 2:
         print("\nDaftar Mahasiswa:")
@@ -39,10 +49,7 @@ while True:
         if len(mahasiswa) == 0:
             print("❌ Belum ada data untuk dihitung.")
         else:
-            total = 0
-            for mhs in mahasiswa:
-                total += mhs[1]
-            rata2 = total / len(mahasiswa)
+            rata2= hitung_rata()
             print(f"\n📊 Rata-rata nilai: {rata2:.2f}")
 
     elif pilihan == 4:
